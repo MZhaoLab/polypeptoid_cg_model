@@ -1,0 +1,33 @@
+[ molecule ]
+HSDp  
+
+[from]
+charmm
+
+[to]
+martini3001
+
+[ martini ]
+BB SC1 SC2 SC3
+
+[ mapping ]
+charmm27 charmm36
+
+[ atoms ]
+   1    NL  BB
+ 2    CA  BB
+ 3    HA1  !BB
+ 4    HA2  !BB
+    5    CB   SC1
+    6   HB1   !SC1
+    7   HB2   !SC1
+    8   CD2   SC2
+    9   HD2   SC2
+   10    CG   SC1
+   11   NE2   SC2
+   12   ND1   SC3
+   13   HD1   SC3
+   14   CE1   SC3
+   15   HE1   SC3
+   16     CLP    BB
+   17     OL    BB

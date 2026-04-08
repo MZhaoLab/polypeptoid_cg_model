@@ -1,0 +1,28 @@
+[ molecule ]
+ALAp
+
+[ from ]
+charmm
+
+[ to ]
+martini3001
+
+[ martini ]
+BB SC1
+
+[ mapping ]
+charmm
+
+[ atoms ]
+ 1    NL  BB
+ 2    CA  BB
+ 3    HA1  !BB
+ 4    HA2  !BB
+ 5    CB   SC1
+ 6    HB1   !SC1
+ 7    HB2  !SC1 
+ 8   HB3  !SC1
+ 9   CLP  BB
+ 10    OL  BB
+
+

@@ -1,0 +1,37 @@
+[ molecule ]
+TRPp
+
+[from]
+charmm
+
+[to]
+martini3001
+
+[ mapping ]
+charmm27 charmm36
+
+[ atoms ]
+    1    NL  BB
+ 2    CA  BB
+ 3    HA1  !BB
+ 4    HA2  !BB
+    5    CB   SC1
+    6   HB1   !SC1
+    7   HB2   !SC1
+    8    CG   SC1
+    9   CD1   SC2 
+   10   HD1   SC2
+   11   NE1   SC2
+   12   HE1   SC2
+   13   CE2   SC3
+   14   CD2   SC3
+   15   CE3   SC4
+   16   HE3   SC4
+   17   CZ3   SC4
+   18   HZ3   SC4 
+   19   CZ2   SC5
+   20   HZ2   SC5 
+   21   CH2   SC5
+   22   HH2   SC5
+   23     CLP    BB
+   24     OL    BB

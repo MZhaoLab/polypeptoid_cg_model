@@ -1,0 +1,32 @@
+[ molecule ]
+NAEk
+
+[ from ]
+charmm
+
+[ to ]
+martini3001
+
+[ martini ]
+BB SC1
+
+[ mapping ]
+charmm
+
+[ atoms ]
+ 1    NL   BB
+ 2    CB   SC1
+ 3    HB1  SC1
+ 4    HB2  SC1
+ 5    CC   SC1
+ 6    HC1  SC1
+ 8    HC2  SC1 
+ 9    NH1  SC1
+ 10   HH1  !SC1
+ 11   HH2  !SC1
+ 12   HH3  !SC1
+ 13   CA    BB
+ 14   HA1  !BB
+ 15   HA2  !BB
+ 16   CLP  BB
+ 17    OL  BB
