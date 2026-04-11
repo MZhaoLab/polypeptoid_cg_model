@@ -208,7 +208,6 @@ We welcome feedback during development:
 ## 📬 Contact
 
 Mingfei Zhao  
-Assistant Professor  
 University of Alabama  
 mingfei.zhao@ua.edu
 ---
