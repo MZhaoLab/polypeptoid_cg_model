@@ -1,0 +1,136 @@
+🧬 MARTINI 3 Coarse-Grained Force Field for Polypeptoids (under construction)
+
+    This repository provides a MARTINI 3–compatible coarse-grained (CG) force field for polypeptoids, including:
+    
+    Residue-specific mapping definitions
+    Bonded parameters for backbone and side chains
+    Integration with martinize2 for automated topology generation
+    
+    The model is developed using a bottom-up parameterization strategy and validated against all-atom simulations for structural and thermodynamic accuracy.
+
+
+🔬 Model Overview
+    This repository aims to provide a MARTINI 3–compatible coarse-grained (CG) force field for polypeptoids, including:
+    
+    Residue-specific mapping definitions
+    Bonded interaction parameters
+    Integration with martinize2 for automated CG model generation
+    
+    The model is developed using a bottom-up parameterization strategy and validated against all-atom simulation.
+
+📦 Repository Structure (Subject to Change)
+    .
+    ├── force_field/
+    │   └── polypeptoid_cg.ff      # MARTINI-style force field directory
+    │
+    ├── mappings/                  # Residue-specific mapping files
+    │   ├── ALAp.map
+    │   ├── ARGp.map
+    │   ├── ASNp.map
+    │   ├── ASPd.map
+    │   ├── CYSd.map
+    │   ├── GLNp.map
+    │   ├── GLUd.map
+    │   ├── HSDp.map
+    │   ├── ILEp.map
+    │   ├── LEUp.map
+    │   ├── LYSp.map
+    │   ├── METd.map
+    │   ├── NAEk.map
+    │   ├── PHEp.map
+    │   ├── SERp.map
+    │   ├── THRp.map
+    │   ├── TRPp.map
+    │   ├── TYRp.map
+    │   └── VALp.map
+    ├── examples/        # (in progress)
+    └── README.md
+
+
+⚙️ Requirements
+    GROMACS (≥ 2022 recommended)
+    martinize2
+    👉 https://github.com/marrink-lab/vermouth-martinize
+    Python (for martinize2 dependencies)
+
+
+🚀 Preliminary Workflow (AA → CG → Simulation)
+
+  ⚠️ This workflow is functional but may change in future updates.
+
+Step 1: Generate All-Atom Peptoid Structure
+
+  We strongly recommend generating structures using:
+  
+  MoSiC-CGenFF-NTOID
+  https://github.com/UWPRG/mftoid-rev-residues
+  
+  Why this is important:
+      Ensures consistent residue naming
+      Matches parameterization reference systems
+      Avoids mapping errors during CG conversion
+      Input Requirements
+  
+  Your .pdb file should:
+  
+      Use residue names consistent with mappings/
+      Be chemically complete (no missing atoms)
+      Be properly capped if needed
+
+Step 2: Generate CG Model with martinize2
+
+  Use martinize2 to convert the all-atom structure:
+  martinize2 \
+  -f input_structure.pdb \
+  -o topol.top \
+  -x cg_structure.pdb \
+  -ff martini3001 \
+  -map mappings/ \
+  -dssp none
+
+  Notes:
+
+The -map flag is required
+This repository provides residue-specific mapping files
+martinize2 does not natively support peptoids — this repo extends it
+
+Step 3: Include Peptoid Force Field
+
+  Add the force field to your topology file:
+  
+  #include "martini_v3.0.0.itp"
+  #include "force_field/polypeptoid_cg.ff/forcefield.itp"
+  
+  ⚠️ Exact inclusion structure may be refined in future updates
+
+Step 4: Run Simulation
+  gmx grompp -f mdp.mdp -c cg_structure.pdb -p topol.top -o topol.tpr
+  gmx mdrun -deffnm md
+
+🔗 How This Works
+  martinize2:
+    Converts all-atom → coarse-grained
+    Generates topology
+  This repository:
+    Provides mapping rules
+    Provides bonded interaction parameters
+  MARTINI 3:
+    Provides nonbonded interaction parameters
+
+⚠️ Known Limitations
+  Mapping scheme still being refined
+  Some residues require further validation
+  Limited benchmarking for long chains
+  Documentation incomplete
+
+📬 Contact
+    Mingfei Zhao, PhD
+    Assistant Professor
+    University of Alabama
+    mingfei.zhao@ua.edu
+
+📖 Reference
+
+  If you use this work, please cite:
+  
+  Wang, J.; Yu, Z.; Zhao, M. Extending the MARTINI 3 Coarse-Grained Force Field to Polypeptoids (submitted)
