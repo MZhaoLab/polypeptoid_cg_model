@@ -209,7 +209,6 @@ We welcome feedback during development:
 
 Mingfei Zhao, PhD  
 University of Alabama  
-https://eng.ua.edu/eng-directory/dr-mingfei-zhao/
 mingfei.zhao@ua.edu
 ---
 
