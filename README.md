@@ -1,6 +1,3 @@
-🧬 MARTINI 3 Coarse-Grained Force Field for Polypeptoids (under construction)
-
-    This repository provides a MARTINI 3–compatible coarse-grained (CG) force field for polypeptoids, including:
     
     Residue-specific mapping definitions
     Bonded parameters for backbone and side chains
@@ -229,9 +226,6 @@ gmx mdrun -deffnm md
 
 ### Recommended Settings
 
-- Time step: 10 fs  
-- Cutoff: 1.1 nm  
-- Dielectric constant: 15  
 - `nrexcl = 3`
 
 ---
@@ -290,37 +284,27 @@ We welcome feedback during development:
 
 ---
 
-  Notes:
+## 📬 Contact
 
-The -map flag is required
-This repository provides residue-specific mapping files
-martinize2 does not natively support peptoids — this repo extends it
+Mingfei Zhao  
+Assistant Professor  
+University of Alabama  
+mingfei.zhao@ua.edu
+---
 
-Step 3: Include Peptoid Force Field
+## 📖 Reference
 
-  Add the force field to your topology file:
-  
-  #include "martini_v3.0.0.itp"
-  #include "force_field/polypeptoid_cg.ff/forcefield.itp"
-  
-  ⚠️ Exact inclusion structure may be refined in future updates
+If you use this work, please cite:
 
-Step 4: Run Simulation
-  gmx grompp -f mdp.mdp -c cg_structure.pdb -p topol.top -o topol.tpr
-  gmx mdrun -deffnm md
+Wang, J.; Yu, Z.; Zhao, M.  
+*Extending the MARTINI 3 Coarse-Grained Force Field to Polypeptoids* (submitted)
 
-🔗 How This Works
-  martinize2:
-    Converts all-atom → coarse-grained
-    Generates topology
-  This repository:
-    Provides mapping rules
-    Provides bonded interaction parameters
-  MARTINI 3:
-    Provides nonbonded interaction parameters
+---
 
-⚠️ Known Limitations
-  Mapping scheme still being refined
-  Some residues require further validation
-  Limited benchmarking for long chains
-  Documentation incomplete
+## 🔮 Planned Improvements
+
+- Complete residue documentation  
+- Standardized naming conventions  
+- Expanded examples  
+- Improved martinize2 integration  
+- Automated validation workflows  
