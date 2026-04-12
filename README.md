@@ -217,7 +217,7 @@ mingfei.zhao@ua.edu
 If you use this work, please cite:
 
 Wang, J.; Yu, Z.; Zhao, M.  
-*Extending the MARTINI 3 Coarse-Grained Force Field to Polypeptoids* (submitted)
+*Extending the MARTINI 3 Coarse-Grained Force Field to Polypeptoids* https://www.biorxiv.org/content/10.64898/2026.04.10.717689v1)
 
 ---
 
