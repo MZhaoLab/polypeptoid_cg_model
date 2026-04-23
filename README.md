@@ -32,7 +32,7 @@ The model is developed using a **bottom-up parameterization strategy** and valid
 
 ```
 .
-├── force_field/
+├── ff/
 │   └── polypeptoid_cg.ff
 │
 ├── mappings/
@@ -110,14 +110,14 @@ martinize2 \
   -f input_structure.pdb \
   -o topol.top \
   -x cg_structure.pdb \
-  -ff martini3001 \
-  -map mappings/ \
+  -ff-dir force_fields \
+  -map-dir mappings/ \
   -dssp none
 ```
 
 **Notes:**
 
-- The `-map` flag is required  
+- Make sure each folder contains the appropriate files, and use CHARMM as the all-atom force field.
 - This repository provides residue-specific mapping files  
 - martinize2 does not natively support peptoids — this repo extends it  
 
@@ -129,8 +129,14 @@ Add the force field to your topology file:
 
 ```cpp
 #include "martini_v3.0.0.itp"
-#include "force_field/polypeptoid_cg.ff/forcefield.itp"
+#include "forcefield.itp"
 ```
+
+### Recommended Settings
+
+- `nrexcl = 3`
+
+---
 
 > ⚠️ Exact inclusion structure may be refined in future updates
 
@@ -142,12 +148,6 @@ Add the force field to your topology file:
 gmx grompp -f mdp.mdp -c cg_structure.pdb -p topol.top -o topol.tpr
 gmx mdrun -deffnm md
 ```
-
----
-
-### Recommended Settings
-
-- `nrexcl = 3`
 
 ---
 
