@@ -1,1 +1,0 @@
-martinize2 -ff-dir force_fields -map-dir mappings -f VVVV.pdb -x V4_CG.pdb -o topol.top -maxwarn 1 -name VALp
