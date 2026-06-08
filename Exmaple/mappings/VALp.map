@@ -1,0 +1,34 @@
+[ molecule ]
+VALp
+
+[ from ]
+charmm
+
+[ to ]
+martini3001
+
+[ martini ]
+BB SC1
+
+[ mapping ]
+charmm
+
+[ atoms ]
+ 1    NL  BB
+ 2    CA  BB
+ 3    HA1  !BB
+ 4    HA2  !BB
+ 5    CB  SC1
+ 6    HB  !SC1
+ 8   CG1  SC1 
+ 9  HG11  !SC1
+ 10  HG12  !SC1
+ 11  HG13  !SC1
+ 12   CG2  SC1
+ 13  HG21  !SC1
+ 14  HG22  !SC1
+ 15  HG23  !SC1
+ 16   CLP  BB
+ 17    OL  BB
+
+
