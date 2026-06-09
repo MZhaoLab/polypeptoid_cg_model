@@ -59,9 +59,7 @@ The model is developed using a **bottom-up parameterization strategy** and valid
 │   └── VALp.map
 |
 ├── examples/
-│   └── example_peptoid/
 │       ├── example_all_atom.pdb
-│       ├── run_martinize2.sh
 │       └── README.md
 │
 └── README.md
@@ -175,7 +173,7 @@ If `martinize2` cannot recognize a residue, first check that:
 Before applying the workflow to your own system, we recommend testing the installation using the example provided in:
 
 ```text
-examples/example_peptoid/example_all_atom.pdb
+examples/example_all_atom.pdb
 ```
 
 Example command:
@@ -189,10 +187,9 @@ martinize2 \
   -map martini3001 \
   -dssp none
 ```
-Alternatively, use the provided script:
+Martinize2 installation:
+https://cgmartini.nl/docs/downloads/tools/topology-structure-generation.html
 
-```bash
-bash examples/example_peptoid/run_martinize2.sh
 ```
 
 This example is intended to help users verify that the force-field files, mapping files, and residue naming are correctly installed before preparing their own systems.
