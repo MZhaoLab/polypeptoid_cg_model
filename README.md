@@ -190,8 +190,6 @@ martinize2 \
 Martinize2 installation:
 https://cgmartini.nl/docs/downloads/tools/topology-structure-generation.html
 
-```
-
 This example is intended to help users verify that the force-field files, mapping files, and residue naming are correctly installed before preparing their own systems.
 ---
 
