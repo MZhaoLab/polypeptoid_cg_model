@@ -59,6 +59,10 @@ The model is developed using a **bottom-up parameterization strategy** and valid
 │   └── VALp.map
 |
 ├── examples/
+│       ├── force_fields/
+│       │       └── polypeptoid_cg.ff
+│       ├── mappings/
+│       │       └── example.map
 │       ├── example_all_atom.pdb
 │       └── README.md
 │
