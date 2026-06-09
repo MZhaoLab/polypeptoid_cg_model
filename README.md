@@ -63,8 +63,8 @@ The model is developed using a **bottom-up parameterization strategy** and valid
 │       │       ├── charmm/merged.rtp
 │       │       └── martini3001/polypeptoid_cg.ff
 │       ├── mappings/
-│       │       └── example.map
-│       ├── example_all_atom.pdb
+│       │       └── VALp.map
+│       ├── VVVV.pdb
 │       └── README.md
 │
 └── README.md
@@ -178,14 +178,14 @@ If `martinize2` cannot recognize a residue, first check that:
 Before applying the workflow to your own system, we recommend testing the installation using the example provided in:
 
 ```text
-examples/example_all_atom.pdb
+examples/VVVV.pdb
 ```
 
 Example command:
 
 ```bash
 martinize2 \
-  -f examples/example_peptoid/example_all_atom.pdb \
+  -f examples/VVVV.pdb \
   -o topol.top \
   -x cg_structure.pdb \
   -ff polypeptoid_cg \
