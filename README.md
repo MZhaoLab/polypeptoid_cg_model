@@ -60,7 +60,8 @@ The model is developed using a **bottom-up parameterization strategy** and valid
 |
 ├── examples/
 │       ├── force_fields/
-│       │       └── polypeptoid_cg.ff
+│       │       ├── charmm/merged.rtp
+│       │       └── martini3001/polypeptoid_cg.ff
 │       ├── mappings/
 │       │       └── example.map
 │       ├── example_all_atom.pdb
